@@ -1,8 +1,38 @@
 # <Team 1 Movie-picker>
 
-## Description
 
+sjbdlt:
+-Most people watch movies and most people have a hard time choosing what to watch.
+-Figured we try and help people make a more informed and quicker choice.
+-Provides more information to a person about the movies they are considering and also could breaks a tie to have a third party suggestion.
+-Learned that more information out there than i thought about movies then just year made, title and who stared in it.
+-Also provided some random triva information to help spark conversation or thoughts of another movie to watch another time.
+
+User store:
+
+Page setup to welcome user and easily instruct user what to do.
+Section to enter in two movie titles side by side
+Search button to go out and pull information from an api about the two movies
+Store what movies were looked up and what rotten tomato score they recieved
+Display the results to the user on the page side by side of the two movies information
+Display what we suggest to watch based on score
+Display Top Searchs on seperate Top Picks page by ranking the score highest to lowest
+Search a second API for random movie facts from same button click for comparing two movies
+Display random facts about movies on the bottom page
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+
+User Acceptance:
+
+Header section with Title and link to top picks page
+Section with two input boxes and a search button are setup for user to enter in movie titles
+Section with two display areas for moview one information and movie two information. (Items to retrieve from API Movie Title, Premiere Date, Staring, Brief description and movie poster image if available).
+When lookup information is stored local storage and user can see it on Top Picks page
+When user sees what movie we suggest in are suggestion section
+When user is able to see a random movie fact come up after comparing two movies.
+
+![wireframe](/assets/images//Wireframe.png)
+
+## Description
 
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
