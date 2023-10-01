@@ -1,0 +1,1 @@
+const apiUrl = `http://www.omdbapi.com/?t=superbad&apikey=b52306fa`
