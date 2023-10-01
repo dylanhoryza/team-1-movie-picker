@@ -8,36 +8,69 @@
     <link rel="stylesheet" href="./assets/styles/style.css" />
   </head>
   <body>
-    <header><h1>Welcome to Movie Review</h1></header>
-    <div class="section">
-
-        <div class="container" id="search">
-            <div class="columns">
-                <div class="column">
-                <h2>Search Movies</h2>
+    <header>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <h1>Welcome to Movie Picker</h1>
+          <h3>Have two movies in mind, not sure which one to pick. Enter them below to get our suggestion.</h3>
+        </div>
+        <div class="navbar-end">
+            <a id="navbar-toplink" href="toppicks.html">🌟 🌟 Top Picks 🌟 🌟</a>          
+        </div>
+      </div>
+    </header>
+      <div class="section">
+        <div class="columns" id="search">
+            <div class="column">
+              <h2>Search Movies</h2>
                 <input type="text" id="txtseachval1" placeholder="Seach Title 1"></input>
                 <input type="text" id="txtseachval2" placeholder="Seach Title 2"></input>
-               
-                <button class="btn btn-danger" id="btnsearch">
-                    Search
-                  </button> 
+                <button class="btn btn-danger" id="btnsearch">Search</button> 
+            </div> 
+        </div>                  
+        <div class="columns" id="searchresults">
+          <div class="column is-5" id="searchresult1">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x98">
+                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Movie Title</p>
+                    <p class="subtitle is-6">Premiere Date</p>
+                  </div>
+                </div>            
+                <div class="content">
+                  Place for Movie Description
                 </div>
-                <div class="column">
-                    
+              </div>
+            </div>
+          </div> 
+          <div class="column is-5" id="searchresult2">
+            <div class="card">             
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x98">
+                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Movie Title</p>
+                    <p class="subtitle is-6">Premiere Date</p>
+                  </div>
+                </div>            
+                <div class="content">
+                  Place for Movie Description
+                  
                 </div>
-
+              </div>
             </div>
-        </div>
-        <div class="container" id=searchresults>
-            <div class="columns">
-                <div class="column is-6" id="searchresult1">
-                   <h2>Movie Review 1</h2>
-                </div> 
-                <div class="column is-6" id="searchresult2">
-                    <h2>Movie Review 2</h2>
-                 </div>           
-            </div>
-        </div>
+          </div>           
+        </div>        
         <div class="container" id=search-suggestion>
             <div class="columns">
                 <div class="column is-12" id="result-suggestion">
@@ -47,7 +80,6 @@
                 </div>           
             </div>
         </div>
-
         <div class="container" id=moviefact>
             <div class="columns">
                 <div class="column is-12" id="fact1">

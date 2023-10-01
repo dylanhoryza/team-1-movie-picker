@@ -1,17 +1,71 @@
+/*Default margin around page*/
 *{
-    margin: 10px;
+    margin: 5px;
 }
 
+/*Centers the title on Top Pick Page to middle of page*/
+.TopPickDiv{
+    text-align: center;
+}
+
+/*Sets the display format for content in this section*/
+.navbar-start{
+    display: block;
+}
+
+/*Sets color for nav bar link*/
+#navbar-toplink{
+    color: gold;
+}
+
+/*Sets font size and weight of h1 title*/
 h1{
     font-size: xx-large;
     font-weight: bold;
 }
 
+/*sets the background and font color for header*/
 header{
-    background-color: red;
+    background-color: black;
+    color: white;
 }
 
+/*sets boarder around search div*/
+#search{
+    border: 2px solid;
+}
+
+/*Sets the length on the input fields*/
+#txtseachval1, #txtseachval2{
+    width: 250px;
+}
+
+/*even out the spacing between the two cards for movie compare results*/
 #searchresults{
-    background-color: lightblue;
+    justify-content: space-between;
+}
+
+/*controls the backgroundcolor for the two moview results*/
+#searchresult1, #searchresult2{
+    background-color: lightgray;
+    
+}
+
+/*Center the top result picks on the page*/
+#TopPickResults{
+    text-align: center;
+}
+
+/*eliminates the marking infront of the top pick results list*/
+#listtoppickscore, #listtoppickname{
+    list-style-type: none;
+}
+
+/*Sets the nav-menu to be flex and background color to be black when screen is small then 1023*/
+@media screen and (max-width:1023px) {
+    .navbar-menu{
+        display: flex;
+        background-color: black;
+    }
 }
 
