@@ -36,7 +36,7 @@ header{
 }
 
 /*Sets the length on the input fields*/
-#txtseachval1, #txtseachval2{
+#txtsearchval1, #txtsearchval2{
     width: 250px;
 }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6 Challenge</title>
+    <title>Movie Picker</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/styles/style.css" />
   </head>
@@ -23,9 +23,12 @@
         <div class="columns" id="search">
             <div class="column">
               <h2>Search Movies</h2>
-                <input type="text" id="txtseachval1" placeholder="Seach Title 1"></input>
-                <input type="text" id="txtseachval2" placeholder="Seach Title 2"></input>
+              <form id="form">
+                <input type="text" id="txtsearchval1" placeholder="Seach Title 1"></input>
+                <input type="text" id="txtsearchval2" placeholder="Seach Title 2"></input>
                 <button class="btn btn-danger" id="btnsearch">Search</button> 
+              </form>
+            
             </div> 
         </div>                  
         <div class="columns" id="searchresults">
@@ -35,16 +38,18 @@
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x98">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      <img src="" alt="" class="movie-poster" id="poster">
                     </figure>
                   </div>
                   <div class="media-content">
-                    <p class="title is-4">Movie Title</p>
-                    <p class="subtitle is-6">Premiere Date</p>
+                    <p class="title is-4" id="movie-title"></p>
+                    <p class="subtitle is-6" id="release-year">Premiere Date</p>
+                    <p id="runtime"></p>
+                    <p id="review-score"></p>
                   </div>
                 </div>            
                 <div class="content">
-                  Place for Movie Description
+                  <p class="plot" id="plot">Place for Movie Description</p>
                 </div>
               </div>
             </div>
@@ -55,16 +60,18 @@
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x98">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      <img src="" alt="" class="movie-poster" id="poster-2">
                     </figure>
                   </div>
                   <div class="media-content">
-                    <p class="title is-4">Movie Title</p>
-                    <p class="subtitle is-6">Premiere Date</p>
+                    <p class="title is-4" id="movie-title-2">Movie Title</p>
+                    <p class="subtitle is-6" id="release-year-2">Premiere Date</p>
+                    <p id="runtime-2"></p>
+                    <p id="review-score-2"></p>
                   </div>
                 </div>            
                 <div class="content">
-                  Place for Movie Description
+                  <p class="plot" id="plot-2">Place for Movie Description</p>
                   
                 </div>
               </div>
@@ -74,9 +81,7 @@
         <div class="container" id=search-suggestion>
             <div class="columns">
                 <div class="column is-12" id="result-suggestion">
-                   <h2 class="suggestion-header">Suggestion</h2>
-                   <img src="assets/images/popcorn.png" class="popcorn-icon">
-                   <p class="movie-result"> Based on reviews, you should watch: </p>
+                 
                 </div>           
             </div>
         </div>
