@@ -11,8 +11,6 @@ let movie1Data = '';
 let movie2Data = '';
 
 
-
-
 //Add code here to compare movies from API
 function CompareMovies(event){
   event.preventDefault();
