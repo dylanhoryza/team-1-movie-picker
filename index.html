@@ -9,6 +9,7 @@
   </head>
   <body>
     <header>
+       
       <div class="navbar-menu">
         <div class="navbar-start">
           <h1>Welcome to Movie Picker</h1>
@@ -30,9 +31,12 @@
               </form>
             
             </div> 
-        </div>                  
+        </div>         
+        <div class="Instructions">
+          <p>Have two movies in mind, not sure which one to pick. Enter them below to get our suggestion.</p>
+        </div>                       
         <div class="columns" id="searchresults">
-          <div class="column is-5" id="searchresult1">
+          <div class="column is-5 hide" id="searchresult1">
             <div class="card">
               <div class="card-content">
                 <div class="media">
@@ -54,7 +58,7 @@
               </div>
             </div>
           </div> 
-          <div class="column is-5" id="searchresult2">
+          <div class="column is-5 hide" id="searchresult2">
             <div class="card">             
               <div class="card-content">
                 <div class="media">
@@ -85,14 +89,13 @@
                 </div>           
             </div>
         </div>
-        <div class="container" id=moviefact>
-            <div class="columns">
-                <div class="column is-12" id="fact1">
-                   <h2>Movie Fact</h2>
-                </div>           
-            </div>
-        </div>
-      
+        <div class= "container" id ="movieGif">
+          <div class="columns">
+            <div class="column gif-container" >
+               <img src= '' class= "gif-container" id="giphy1" placeholder = "Here is where gif for the first movie is">
+            </div> 
+          </div>
+        </div>      
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
