@@ -1,7 +1,3 @@
-
-
-
-
 //Add code here to compare movies from API
 function CompareMovies(){
 
