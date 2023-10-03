@@ -2,6 +2,8 @@
 // HTML References
 const searchFirstMovie = $('#txtsearchval1');
 const searchSecondMovie = $('#txtsearchval2');
+const searchResult1 = $('#searchresult1');
+const searchResult2 = $('#searchresult2');
 const formEl = $('#form');
 
 
@@ -15,6 +17,8 @@ let movie2Data = '';
 function CompareMovies(event){
   event.preventDefault();
   
+  searchResult1.removeClass("hide");
+  searchResult2.removeClass("hide"); 
 
   getFirstMovie();
   getSecondMovie();
@@ -145,12 +149,14 @@ function displaySecondMovie(data) {
 }
 
 function compareReviewScores() {
+ 
+
   // Parse the numeric values from the review scores
   const reviewScore1 = parseFloat(movie1Data.Ratings[1].Value);
   const reviewScore2 = parseFloat(movie2Data.Ratings[1].Value);
   const suggestionCard = $('<div class="col">');
   const suggestionContainer =$('#result-suggestion');
-
+ 
   // Compare the review scores and append HTML 
   if (!isNaN(reviewScore1) && !isNaN(reviewScore2)) {
     if (reviewScore1 >= reviewScore2) {
@@ -159,6 +165,8 @@ function compareReviewScores() {
      <p class="movie-result"> Based on reviews, 
      you should watch: ${firstMovie} </p>`);
 
+
+     getGiphyData(`${firstMovie}`);
      SaveComparisonInfo(`${firstMovie}`, reviewScore1);
 
     } else if (reviewScore1 < reviewScore2) {
@@ -167,9 +175,44 @@ function compareReviewScores() {
      <p class="movie-result"> Based on reviews, 
      you should watch: ${secondMovie} </p>`);
 
+     getGiphyData(`${secondMovie}`);
      SaveComparisonInfo(`${secondMovie}`, reviewScore2);
     } 
     suggestionContainer.append(suggestionCard);
 }
 };
 
+
+//placing variable from index html. 
+var gifEl_1 = document.getElementById('giphy1') ;
+var btnSearch = document.getElementById('btnsearch');
+
+// placing my API Key here
+const giphyKey = "QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i";
+
+
+// placing the API fetch information here based off the keyword from the search bar. 
+function getGiphyData(MovieTitle){
+     
+    //const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${giphyKey}&q=${MovieTitle}&limit=1`;
+
+    const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i&q=${MovieTitle}%27&limit=1`
+
+    fetch(gifApiUrl)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function (data) {
+        appendGifImage(data);
+    });
+};
+
+
+function appendGifImage (data){
+    console.log(data);
+    const gifDisplay = data.data[0].images.original.url;
+    
+    console.log(gifDisplay);
+    document.querySelector('#giphy1').src = `${gifDisplay}`;
+    
+};

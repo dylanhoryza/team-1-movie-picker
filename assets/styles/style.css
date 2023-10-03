@@ -1,3 +1,13 @@
+:root{
+     --color1: #0C5B94;
+     --color2: #B3DFFF;
+     --color3: #51A5E0;
+     --color4: #946218;
+     --color5: #E9BC79;
+}
+
+
+
 /*Default margin around page*/
 *{
     margin: 5px;
@@ -69,3 +79,12 @@ header{
     }
 }
 
+.hide{
+    display: none;
+}
+
+.Instructions{
+    font-weight: bold;
+    font-size: x-large;
+
+}
