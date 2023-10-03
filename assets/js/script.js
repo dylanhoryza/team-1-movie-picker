@@ -1,11 +1,25 @@
 
+// HTML References
+const searchFirstMovie = $('#txtsearchval1');
+const searchSecondMovie = $('#txtsearchval2');
+const formEl = $('#form');
+
+
+let firstMovie = '';
+let secondMovie = '';
+let movie1Data = '';
+let movie2Data = '';
+
 
 
 
 //Add code here to compare movies from API
-function CompareMovies(){
+function CompareMovies(event){
+  event.preventDefault();
+  
 
-
+  getFirstMovie();
+  getSecondMovie();
 }
 
 //Store the movie info in local storage
@@ -23,10 +37,10 @@ function SaveComparisonInfo(MovieTitle, MovieScore){
 
     searchcompare.push(lastcompare);
 
-    localStorage.setItem("currentsearch",  JSON.stringify(currentsearch));
+    localStorage.setItem("MoviePicks",  JSON.stringify(searchcompare));
 
-    $('#txtsearchval1').val('');
-    $('#txtsearchval2').val('');
+    $('#txtsearchval1').val();
+    $('#txtsearchval2').val();
 
 }
 
@@ -35,36 +49,12 @@ function SaveComparisonInfo(MovieTitle, MovieScore){
 btnsearch.addEventListener("click", CompareMovies)
 
 
-// HTML References
-const searchFirstMovie = $('#txtsearchval1');
-const searchSecondMovie = $('#txtsearchval2');
-const formEl = $('#form');
-
-
-let firstMovie = '';
-let secondMovie = '';
-let movie1Data = '';
-let movie2Data = '';
-
-// const formSubmitHandler = function (event) {
-//   event.preventDefault();
-
-//   firstMovie = searchFirstMovie.val().trim();
-//   secondMovie = searchSecondMovie.val().trim();
-
-//   if (firstMovie && secondMovie) {
-//     getFirstMovie(firstMovie);
-//     getSecondMovie(secondMovie);
-
-//     searchFirstMovie.val('');
-//     searchSecondMovie.val('');
-//   }
-// }
-
-
 // function to get first movie data
 function getFirstMovie() {
-  const apiUrl = `https://www.omdbapi.com/?t=superbad&apikey=b52306fa`
+
+  firstMovie = searchFirstMovie.val().trim();
+
+  const apiUrl = `https://www.omdbapi.com/?t=${firstMovie}&apikey=b52306fa`
   
   fetch(apiUrl)
   .then(function (response) {
@@ -80,7 +70,10 @@ function getFirstMovie() {
 }
 // function to get second movie data
 function getSecondMovie() {
-  const apiUrl = `https://www.omdbapi.com/?t=$toy-story&apikey=b52306fa`
+
+  secondMovie = searchSecondMovie.val().trim();
+
+  const apiUrl = `https://www.omdbapi.com/?t=${secondMovie}&apikey=b52306fa`
 
   fetch(apiUrl)
   .then(function (response) {
@@ -95,8 +88,7 @@ function getSecondMovie() {
   });
 };
 
-getFirstMovie();
-getSecondMovie();
+
 
 //function to display first movie
 function displayFirstMovie(data) {
@@ -167,18 +159,19 @@ function compareReviewScores() {
      suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
      <img src="assets/images/popcorn.png" class="popcorn-icon">
      <p class="movie-result"> Based on reviews, 
-     you should watch: Movie 1 </p>`);
+     you should watch: ${firstMovie} </p>`);
+
+     SaveComparisonInfo(`${firstMovie}`, reviewScore1);
 
     } else if (reviewScore1 < reviewScore2) {
       suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
      <img src="assets/images/popcorn.png" class="popcorn-icon">
      <p class="movie-result"> Based on reviews, 
-     you should watch: Movie 2 </p>`);
+     you should watch: ${secondMovie} </p>`);
+
+     SaveComparisonInfo(`${secondMovie}`, reviewScore2);
     } 
     suggestionContainer.append(suggestionCard);
 }
 };
 
-
-
-// formEl.on('submit', formSubmitHandler);
