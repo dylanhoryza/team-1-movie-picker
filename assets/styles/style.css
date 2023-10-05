@@ -200,6 +200,7 @@ header{
     display: flex;
     justify-content: center;
     margin: auto;
+}
 
 /*set the margin on bottom font size and width on of list*/
 #listtoppickscore li{
