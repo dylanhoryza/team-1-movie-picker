@@ -15,29 +15,34 @@
        
       <div class="navbar-menu">
         <div class="navbar-start">
-          <h1>Welcome to Movie Picker</h1>
-          <h3>Have two movies in mind, not sure which one to pick. Enter them below to get our suggestion.</h3>
+          <h1>Welcome to <span class="title-change">Movie Picker</span> 
+            <span class="icon-header">🍿</span>
+          </h1>
         </div>
         <div class="navbar-end">
             <a id="navbar-toplink" href="toppicks.html">🌟 🌟 Top Picks 🌟 🌟</a>          
         </div>
       </div>
     </header>
+    <div class="Instructions">
+      <p>Have two movies in mind and not sure which one to pick? <br>
+        <span class="Instructions-change">Enter them below to get our suggestion!</span></p>
+    </div>   
       <div class="section">
         <div class="columns" id="search">
             <div class="column">
-              <h2>Search Movies</h2>
+              <h2 class="search-movies-header">Search Movies</h2>
               <form id="form">
+                <label for="txtsearchval1">Movie 1:</label>
                 <input type="text" id="txtsearchval1" placeholder="Seach Title 1"></input>
+                <label for="txtsearchval2">Movie 2:</label>
                 <input type="text" id="txtsearchval2" placeholder="Seach Title 2"></input>
                 <button class="btn btn-danger" id="btnsearch">Search</button> 
               </form>
             
             </div> 
         </div>         
-        <div class="Instructions">
-          <p>Have two movies in mind, not sure which one to pick. Enter them below to get our suggestion.</p>
-        </div>                       
+                         
         <div class="columns" id="searchresults">
           <div class="column is-5 hide" id="searchresult1">
             <div class="card">
@@ -89,7 +94,7 @@
         </div>
         <div class= "container" id ="movieGif">
           <div class="columns">
-            <div class= "column gif-container" >
+            <div class= "column gif-container hide" >
               <!-- <h3 class="" id= "gifChoice">Here is a nice gif for the movie we recomend:<span id="gifTitle"></span></h3> -->
               <img src= '' class= "gif-container" id="giphy1" placeholder = "Here is where gif for the first movie is">
             </div> 
@@ -98,5 +103,12 @@
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        Must enter two valid movie titles
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
   </body>
 </html>
