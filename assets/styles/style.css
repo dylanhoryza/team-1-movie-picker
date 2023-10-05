@@ -88,3 +88,18 @@ header{
     font-size: x-large;
 
 }
+
+/* Gif container style for this */
+.gif-container{
+    background: var(--color2);
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+/* Styling the image */
+#giphy1{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
