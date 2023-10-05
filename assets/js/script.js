@@ -5,6 +5,8 @@ const searchSecondMovie = $('#txtsearchval2');
 const searchResult1 = $('#searchresult1');
 const searchResult2 = $('#searchresult2');
 const formEl = $('#form');
+const modal = $('.modal');
+const gifContainer = $('.gif-container');
 
 
 let firstMovie = '';
@@ -12,6 +14,13 @@ let secondMovie = '';
 let movie1Data = '';
 let movie2Data = '';
 
+function openModal($el) {
+  $el.classList.add('is-active');
+}
+
+function closeModal($el) {
+  $el.classList.remove('is-active');
+}
 
 function openModal($el) {
   $el.classList.add('is-active');
@@ -33,6 +42,7 @@ modal1.classList.remove('is-active');
 
 //Add code here to compare movies from API
 function CompareMovies(event){
+
 event.preventDefault();
 
 firstMovie = searchFirstMovie.val().trim();
@@ -45,13 +55,20 @@ if (firstMovie == '' || secondMovie == ''){
 }else{
 
 
-  $('#result-suggestion').empty();
-  
-  searchResult1.removeClass("hide");
-  searchResult2.removeClass("hide"); 
+    $('#result-suggestion').empty();  
+    searchResult1.removeClass("hide");
+    searchResult2.removeClass("hide"); 
+    gifContainer.removeClass("hide");
 
-  getFirstMovie();
-  getSecondMovie();
+  
+    getFirstMovie();
+    getSecondMovie();
+
+
+  }
+
+
+
 }
 }
 
@@ -79,7 +96,7 @@ function SaveComparisonInfo(MovieTitle, MovieScore){
 
 
 //Event listner for search button to start the comparison of the two movies
-btnsearch.addEventListener("click", CompareMovies)
+  btnsearch.addEventListener("click", CompareMovies)
 
 // function to get first movie data
 function getFirstMovie() {
@@ -191,9 +208,8 @@ function compareReviewScores() {
   if (!isNaN(reviewScore1) && !isNaN(reviewScore2)) {
     if (reviewScore1 >= reviewScore2) {
      suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
-     <img src="assets/images/popcorn.png" class="popcorn-icon">
-     <p class="movie-result"> Based on reviews, 
-     you should watch: ${firstMovie} </p>`);
+     <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
+     you should watch:</span> ${firstMovie} </p>`);
 
 
      getGiphyData(`${firstMovie}`);
@@ -201,9 +217,8 @@ function compareReviewScores() {
 
     } else if (reviewScore1 < reviewScore2) {
       suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
-     <img src="assets/images/popcorn.png" class="popcorn-icon">
-     <p class="movie-result"> Based on reviews, 
-     you should watch: ${secondMovie} </p>`);
+     <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
+     you should watch:</span> ${secondMovie} </p>`);
 
      getGiphyData(`${secondMovie}`);
      SaveComparisonInfo(`${secondMovie}`, reviewScore2);
@@ -220,9 +235,9 @@ var btnSearch = document.getElementById('btnsearch');
 // placing my API Key here for giphy API
 const giphyKey = "QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i";
 
-// placing the API fetch information here based off the keyword from the search bar. 
+// placing the API fetch information here based off the winning Moving Title after it went through compareReviewScore(). 
 function getGiphyData(MovieTitle){
-    const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i&q=${MovieTitle}%27&limit=1`
+  const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i&q=${MovieTitle}%27&limit=1`
 
     fetch(gifApiUrl)
     .then(function(response){
@@ -232,11 +247,11 @@ function getGiphyData(MovieTitle){
         appendGifImage(data);
     });
 };
-
+// Pulling from the API data from getGiphyData() 
 function appendGifImage (data){
-    //console.log(data);
+    // This targets the object properties and for the url
     const gifDisplay = data.data[0].images.original.url;
-    //console.log(gifDisplay)
+    // Appending the img url to the blank src from the object properties from the API 
     document.querySelector('#giphy1').src = `${gifDisplay}`;  
 };
 
