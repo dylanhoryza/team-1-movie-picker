@@ -29,8 +29,9 @@ body {
 }
 
 /*Sets color for nav bar link*/
-#navbar-toplink{
-  color: gold;
+
+#navbar-toplink, #TopPickTitle{
+    color: var(--color5);
 }
 
 /*Sets font size and weight of h1 title*/
@@ -41,8 +42,8 @@ h1{
 
 /*sets the background and font color for header*/
 header{
-  background-color: black;
-  color: white;
+    background-color: var(--color1);
+    color: white;
 }
 
 /*sets boarder around search div*/
@@ -167,12 +168,34 @@ header{
     }
 }
 
+/*sets the div to be hidden on page load will make it viewable in javascript when search occurs*/
 .hide{
   display: none;
 }
 
+/**/
 .Instructions{
-  font-weight: bold;
-  font-size: x-large;
+    font-weight: bold;
+    font-size: x-large;
+}
 
+
+/*set the list to be next to each other*/
+#fact1{
+    display: inline-flex;
+    justify-content: center;
+}
+
+/*set the margin on bottom font size and width on of list*/
+#listtoppickscore li{
+    font-size: x-large;
+    width: 40px;
+    margin-bottom: 5px;
+}
+
+/*set the margin on bottom font size and width on of list*/ 
+#listtoppickname li{
+       font-size: x-large;
+       margin-bottom: 5px;
+       width: 200px;
 }
