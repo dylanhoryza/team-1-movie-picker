@@ -5,8 +5,8 @@ function Gettoppicks(){
     const myArray = storedArray ? JSON.parse(storedArray) : [];
 
     myArray.sort((a, b) => {
-        const scoresa = a.score
-        const scoresb = b.score
+        const scoresa = a.MovieScore
+        const scoresb = b.MovieScore
         return scoresb - scoresa; 
     });
 
