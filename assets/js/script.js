@@ -208,9 +208,9 @@ var btnSearch = document.getElementById('btnsearch');
 // placing my API Key here for giphy API
 const giphyKey = "QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i";
 
-// placing the API fetch information here based off the keyword from the search bar. 
+// placing the API fetch information here based off the winning Moving Title after it went through compareReviewScore(). 
 function getGiphyData(MovieTitle){
-    const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i&q=${MovieTitle}%27&limit=1`
+  const gifApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=QRQ4VnDC8nQFb9LYpgi1mywDZ8oJ8C8i&q=${MovieTitle}%27&limit=1`
 
     fetch(gifApiUrl)
     .then(function(response){
@@ -220,10 +220,10 @@ function getGiphyData(MovieTitle){
         appendGifImage(data);
     });
 };
-
+// Pulling from the API data from getGiphyData() 
 function appendGifImage (data){
-    //console.log(data);
+    // This targets the object properties and for the url
     const gifDisplay = data.data[0].images.original.url;
-    //console.log(gifDisplay)
+    // Appending the img url to the blank src from the object properties from the API 
     document.querySelector('#giphy1').src = `${gifDisplay}`;  
 };

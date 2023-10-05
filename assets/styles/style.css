@@ -275,19 +275,19 @@ label {
 
 
 /* Gif container style for this */
-.gif-container{
+.gif-container {
     background: var(--color2);
     align-items: center;
-    border-radius: 20px;
+    border-radius: 40px;
+    padding: 10px;
 }
 
-
-/* Styling the image */
+/* Styling the image ensuring it is centered within the container*/
 #giphy1 {
     display: flex;
-    justify-content: center;
     margin: auto;
 }
+
 /*set the margin on bottom font size and width on of list*/
 #listtoppickscore li{
     font-size: x-large;
