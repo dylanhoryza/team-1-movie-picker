@@ -8,14 +8,22 @@
 
 
 body {
-  background-color: #0C5B94;
+  background-image: linear-gradient(to left bottom, #0c5b94, #216da7, #327fba, #4292cd, #51a5e0);
   color: white;
+ 
+  
+}
+
+html {
+  background-image: linear-gradient(to left bottom, #0c5b94, #216da7, #327fba, #4292cd, #51a5e0);
+  height: 100vh;
 }
 
 
 /*Default margin around page*/
 *{
   margin: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*Centers the title on Top Pick Page to middle of page*/
@@ -31,34 +39,97 @@ body {
 /*Sets color for nav bar link*/
 
 #navbar-toplink, #TopPickTitle{
-    color: var(--color5);
+    /* color: var(--color5); */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /*Sets font size and weight of h1 title*/
 h1{
   font-size: xx-large;
   font-weight: bold;
+  color: #E9BC79;
+  font-style: italic;
+  
+}
+
+.title-change {
+  color: white;
+  font-style: italic;
 }
 
 /*sets the background and font color for header*/
 header{
-    background-color: var(--color1);
+    
     color: white;
+}
+
+.icon-header {
+  font-style: normal;
 }
 
 /*sets boarder around search div*/
 #search{
   border: 2px solid;
+  background-color: #51A5E0;
+  border-radius: 10px;
 }
 
-/*Sets the length on the input fields*/
+/*Sets the length and styles on the input fields*/
 #txtsearchval1, #txtsearchval2{
-  width: 250px;
+  width: 350px;
+  height: 32px;
+  font-size: 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  
+}
+
+/* search button styles */
+#btnsearch {
+  width: 100px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #0C5B94;
+  color: white;
+  
+}
+
+#btnsearch:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.15s;
+}
+
+/* setting the form to flexbox */
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #0C5B94;
+}
+
+.search-movies-header {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0C5B94;
 }
 
 /*even out the spacing between the two cards for movie compare results*/
 #searchresults{
   justify-content: space-between;
+  margin-top: 25px;
 }
 
 /*controls the backgroundcolor for the two moview results*/
@@ -66,8 +137,6 @@ header{
   background-color: #51A5E0;
   border-radius: 15px;
   
-    
-    
 }
 
 
@@ -138,15 +207,24 @@ header{
   
 }
 
-.popcorn-icon {
-  align-content: center;
+/* styles for the search suggestion container */
+#search-suggestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-result {
-  align-items: center;
   font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
   text-align: center;
-  
+  margin-bottom: 20px;
+}
+
+/* change text color on span */
+.result-change {
+  color: #E9BC79;
 }
 
 
@@ -173,10 +251,19 @@ header{
   display: none;
 }
 
-/**/
+/*styles for page instructions*/
 .Instructions{
     font-weight: bold;
     font-size: x-large;
+    text-align: center;
+    /* line-height: 40px; */
+    margin-top: 20px;
+    color: #E9BC79;
+}
+
+/* change color for text span */
+.Instructions-change {
+  color: white;
 }
 
 
@@ -196,11 +283,11 @@ header{
 
 
 /* Styling the image */
-#giphy1{
+#giphy1 {
     display: flex;
     justify-content: center;
     margin: auto;
-
+}
 /*set the margin on bottom font size and width on of list*/
 #listtoppickscore li{
     font-size: x-large;
