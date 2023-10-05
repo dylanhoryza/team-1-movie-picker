@@ -16,6 +16,8 @@ let movie2Data = '';
 //Add code here to compare movies from API
 function CompareMovies(event){
   event.preventDefault();
+
+  $('#result-suggestion').empty();
   
   searchResult1.removeClass("hide");
   searchResult2.removeClass("hide"); 
@@ -115,7 +117,7 @@ function displayFirstMovie(data) {
   runtimeEl.text(`${runtime}`);
   document.querySelector('#poster').src = `${moviePoster}`;
   moviePlotEl.text(`${plot}`);
-  reveiewScoreEl.text(`Rotten Tomatoes:${reviewScore}`);
+  reveiewScoreEl.text(`Rotten Tomatoes: ${reviewScore} 🍅`);
 
 
 
@@ -143,7 +145,7 @@ function displaySecondMovie(data) {
   runtimeEl.text(`${runtime}`);
   document.querySelector('#poster-2').src = `${moviePoster}`;
   moviePlotEl.text(`${plot}`);
-  reveiewScoreEl.text(`Rotten Tomatoes:${reviewScore}`);
+  reveiewScoreEl.text(`Rotten Tomatoes: ${reviewScore} 🍅`);
 
 
 }
