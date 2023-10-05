@@ -22,17 +22,44 @@ function closeModal($el) {
   $el.classList.remove('is-active');
 }
 
+function openModal($el) {
+  $el.classList.add('is-active');
+
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+}
+
+function closeModal() {
+const modal1 = document.getElementById('searchError');  
+modal1.classList.remove('is-active');
+}
+
+
 //Add code here to compare movies from API
 function CompareMovies(event){
-  event.preventDefault();
-  if (searchResult1 && searchResult2 === '') {
-    openModal(modal)
-  } else {
-    $('#result-suggestion').empty();
+
+event.preventDefault();
+
+firstMovie = searchFirstMovie.val().trim();
+secondMovie = searchSecondMovie.val().trim();
+
+if (firstMovie == '' || secondMovie == ''){
+ const modal1 = document.getElementById('searchError');  
+ openModal(modal1);
   
+}else{
+
+
+    $('#result-suggestion').empty();  
     searchResult1.removeClass("hide");
     searchResult2.removeClass("hide"); 
     gifContainer.removeClass("hide");
+
   
     getFirstMovie();
     getSecondMovie();
@@ -42,6 +69,7 @@ function CompareMovies(event){
 
 
 
+}
 }
 
 //Store the movie info in local storage
@@ -69,7 +97,6 @@ function SaveComparisonInfo(MovieTitle, MovieScore){
 
 //Event listner for search button to start the comparison of the two movies
   btnsearch.addEventListener("click", CompareMovies)
-
 
 // function to get first movie data
 function getFirstMovie() {
@@ -227,3 +254,6 @@ function appendGifImage (data){
     // Appending the img url to the blank src from the object properties from the API 
     document.querySelector('#giphy1').src = `${gifDisplay}`;  
 };
+
+
+

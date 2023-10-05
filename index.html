@@ -106,13 +106,21 @@
         </div>      
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <div class="modal">
+    <script src="./assets/js/script.js"></script>   
+    <div class="modal" id="searchError">
       <div class="modal-background"></div>
       <div class="modal-content">
-        Must enter two valid movie titles
+        <article class="message is-small is-danger">
+          <div class="message-header">
+            <p>Error</p>          
+          </div>
+          <div class="message-body ">
+           <p>Please make sure both movie titles you wish to review are filled out.</p>
+          </div>
+        </article>
       </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
+      <button class="modal-close is-large" id="closem" aria-label="close"></button>
+    </div> 
+
   </body>
 </html>
