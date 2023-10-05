@@ -5,6 +5,8 @@ const searchSecondMovie = $('#txtsearchval2');
 const searchResult1 = $('#searchresult1');
 const searchResult2 = $('#searchresult2');
 const formEl = $('#form');
+const modal = $('.modal');
+const gifContainer = $('.gif-container');
 
 
 let firstMovie = '';
@@ -12,18 +14,34 @@ let secondMovie = '';
 let movie1Data = '';
 let movie2Data = '';
 
+function openModal($el) {
+  $el.classList.add('is-active');
+}
+
+function closeModal($el) {
+  $el.classList.remove('is-active');
+}
 
 //Add code here to compare movies from API
 function CompareMovies(event){
   event.preventDefault();
-
-  $('#result-suggestion').empty();
+  if (searchResult1 && searchResult2 === '') {
+    openModal(modal)
+  } else {
+    $('#result-suggestion').empty();
   
-  searchResult1.removeClass("hide");
-  searchResult2.removeClass("hide"); 
+    searchResult1.removeClass("hide");
+    searchResult2.removeClass("hide"); 
+    gifContainer.removeClass("hide");
+  
+    getFirstMovie();
+    getSecondMovie();
 
-  getFirstMovie();
-  getSecondMovie();
+
+  }
+
+
+
 }
 
 //Store the movie info in local storage
@@ -50,7 +68,7 @@ function SaveComparisonInfo(MovieTitle, MovieScore){
 
 
 //Event listner for search button to start the comparison of the two movies
-btnsearch.addEventListener("click", CompareMovies)
+  btnsearch.addEventListener("click", CompareMovies)
 
 
 // function to get first movie data
@@ -163,9 +181,8 @@ function compareReviewScores() {
   if (!isNaN(reviewScore1) && !isNaN(reviewScore2)) {
     if (reviewScore1 >= reviewScore2) {
      suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
-     <img src="assets/images/popcorn.png" class="popcorn-icon">
-     <p class="movie-result"> Based on reviews, 
-     you should watch: ${firstMovie} </p>`);
+     <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
+     you should watch:</span> ${firstMovie} </p>`);
 
 
      getGiphyData(`${firstMovie}`);
@@ -173,9 +190,8 @@ function compareReviewScores() {
 
     } else if (reviewScore1 < reviewScore2) {
       suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
-     <img src="assets/images/popcorn.png" class="popcorn-icon">
-     <p class="movie-result"> Based on reviews, 
-     you should watch: ${secondMovie} </p>`);
+     <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
+     you should watch:</span> ${secondMovie} </p>`);
 
      getGiphyData(`${secondMovie}`);
      SaveComparisonInfo(`${secondMovie}`, reviewScore2);
