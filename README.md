@@ -8,7 +8,7 @@ sjbdlt:
 -Learned that more information out there than i thought about movies then just year made, title and who stared in it.
 -Also provided some random triva information to help spark conversation or thoughts of another movie to watch another time.
 
-User store:
+User story:
 
 Page setup to welcome user and easily instruct user what to do.
 Section to enter in two movie titles side by side
@@ -35,9 +35,13 @@ When user is able to see a random movie fact come up after comparing two movies.
 ## Description
 
 - What was your motivation?
+  - (RF) The motivation for this project is to utilize client-side APIs and have the API information work together to fulfill our User Story and our Acceptance Criteria 
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+  - (RF) We decided to build this project to utilize public APIs to hone in our skill and collaborate as a team.
 - What problem does it solve?
+  - (RF) We resolved a problem of deciding between two movies.
 - What did you learn?
+  - (RF) We learned a new CSS frame work called BULMA and how to troubleshoot when APIs fail. 
 
 ## Table of Contents (Optional)
 
