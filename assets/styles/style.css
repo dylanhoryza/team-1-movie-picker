@@ -186,6 +186,21 @@ header{
     justify-content: center;
 }
 
+
+/* Gif container style for this */
+.gif-container{
+    background: var(--color2);
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+/* Styling the image */
+#giphy1{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
 /*set the margin on bottom font size and width on of list*/
 #listtoppickscore li{
     font-size: x-large;
@@ -198,4 +213,5 @@ header{
        font-size: x-large;
        margin-bottom: 5px;
        width: 200px;
+
 }
