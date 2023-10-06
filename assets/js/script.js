@@ -7,6 +7,7 @@ const searchResult2 = $('#searchresult2');
 const formEl = $('#form');
 const modal = $('.modal');
 const gifContainer = $('.gif-container');
+const suggestionContainer = $('#result-suggestion');
 
 
 let firstMovie = '';
@@ -59,6 +60,8 @@ if (firstMovie == '' || secondMovie == ''){
     searchResult1.removeClass("hide");
     searchResult2.removeClass("hide"); 
     gifContainer.removeClass("hide");
+    suggestionContainer.removeClass('hide');
+   
 
   
     getFirstMovie();
@@ -70,6 +73,7 @@ if (firstMovie == '' || secondMovie == ''){
 
 
 }
+
 
 //Store the movie info in local storage
 function SaveComparisonInfo(MovieTitle, MovieScore, MovieImage){
@@ -201,14 +205,14 @@ function compareReviewScores() {
   const reviewScore1 = parseFloat(movie1Data.Ratings[1].Value);
   const reviewScore2 = parseFloat(movie2Data.Ratings[1].Value);
   const suggestionCard = $('<div class="col">');
-  const suggestionContainer =$('#result-suggestion');
+  const suggestionContainer = $('#result-suggestion');
  
   // Compare the review scores and append HTML 
   if (!isNaN(reviewScore1) && !isNaN(reviewScore2)) {
     if (reviewScore1 >= reviewScore2) {
      suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
      <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
-     you should watch:</span> ${firstMovie} </p>`);
+     you should watch:</span> <br> ${firstMovie} </p>`);
 
      const firstMoveimage = document.querySelector('#poster').src
      getGiphyData(`${firstMovie}`);
@@ -217,7 +221,7 @@ function compareReviewScores() {
     } else if (reviewScore1 < reviewScore2) {
       suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
      <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
-     you should watch:</span> ${secondMovie} </p>`);
+     you should watch:</span> <br> ${secondMovie} </p>`);
 
      const secondMoveimage = document.querySelector('#poster-2').src
      getGiphyData(`${secondMovie}`);
