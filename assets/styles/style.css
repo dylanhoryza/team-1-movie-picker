@@ -69,6 +69,9 @@ header{
 
 /*sets boarder around search div*/
 #search{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   border: 4px solid;
   background-color: #7D1E22;
   border-radius: 10px;
@@ -108,6 +111,7 @@ header{
 /* setting the form to flexbox */
 #form {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -135,6 +139,7 @@ label {
 
 /*controls the backgroundcolor for the two moview results*/
 #searchresult1, #searchresult2{
+  
   background-color: #A6282D;
   border-radius: 15px;
   
@@ -143,7 +148,7 @@ label {
 
 
 /* changes background color of the displayed movies */
-.card-content, .card {
+.card-content, .card { 
   background-color: #7D1E22;
 }
 
@@ -195,6 +200,8 @@ label {
  
 }
 
+
+
 /* moves the movie info down inside the card */
 .media-content {
   margin-top: 20px;
@@ -217,7 +224,7 @@ label {
 
 /* styles for the search suggestion container */
 #search-suggestion {
-  display: flex;
+ 
   justify-content: center;
   align-items: center;
   background-color: #7D1E22;
@@ -254,13 +261,7 @@ label {
   list-style-type: none;
 }
 
-/*Sets the nav-menu to be flex and background color to be black when screen is small then 1023*/
-@media screen and (max-width:1023px) {
-  .navbar-menu{
-    display: flex;
-    background-color: black;
-    }
-}
+
 
 /*sets the div to be hidden on page load will make it viewable in javascript when search occurs*/
 .hide{
@@ -292,7 +293,8 @@ label {
 
 /* Gif container style for this */
 .gif-container {
-    
+   display: flex;
+   flex-wrap: wrap;
     align-items: center;
     border-radius: 40px;
     padding: 10px;
@@ -318,4 +320,81 @@ label {
        margin-bottom: 5px;
        width: 200px;
 
+}
+
+/*Sets the nav-menu to be flex and background color to be black when screen is small then 1023*/
+@media screen and (max-width:1023px) {
+  .navbar-menu{
+    display: flex;
+    background-color: black;
+    }
+    #txtsearchval1, #txtsearchval2{
+
+      width: 150px;
+    }
+
+    .media{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+   #search-suggestion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+   }
+    
+}
+
+/*Sets the nav-menu to be flex and background color to be black when screen is small then 800*/
+@media screen and (max-width:800px) {
+  .navbar-menu{
+    display: flex;
+    background-color: black;
+    }
+    #txtsearchval1, #txtsearchval2{
+
+      width: 150px;
+    }
+
+    .media{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    
+    #search-suggestion{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+     }
+}
+
+/*Sets the nav-menu to be flex and background color to be black when screen is small then 600*/
+@media screen and (max-width:600px) {
+  .navbar-menu{
+    display: flex;
+    background-color: black;
+    }
+    #txtsearchval1, #txtsearchval2{
+
+      width: 150px;
+    }
+
+    .media{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #search-suggestion{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+     }        
 }
