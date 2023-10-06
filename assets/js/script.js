@@ -70,12 +70,11 @@ if (firstMovie == '' || secondMovie == ''){
 
 
 }
-}
 
 //Store the movie info in local storage
-function SaveComparisonInfo(MovieTitle, MovieScore){
+function SaveComparisonInfo(MovieTitle, MovieScore, MovieImage){
 
-    var lastcompare = {MovieTitle: MovieTitle, MovieScore: MovieScore}
+    var lastcompare = {MovieTitle: MovieTitle, MovieScore: MovieScore, MovieImage: MovieImage}
 
     var searchcompare = localStorage.getItem('MoviePicks');
 
@@ -211,17 +210,18 @@ function compareReviewScores() {
      <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
      you should watch:</span> ${firstMovie} </p>`);
 
-
+     const firstMoveimage = document.querySelector('#poster').src
      getGiphyData(`${firstMovie}`);
-     SaveComparisonInfo(`${firstMovie}`, reviewScore1);
+     SaveComparisonInfo(`${firstMovie}`, reviewScore1, firstMoveimage);
 
     } else if (reviewScore1 < reviewScore2) {
       suggestionCard.html(`<h2 class="suggestion-header">Suggestion</h2>
      <p class="movie-result"> 🍿 <span class="result-change"> Based on reviews, 
      you should watch:</span> ${secondMovie} </p>`);
 
+     const secondMoveimage = document.querySelector('#poster-2').src
      getGiphyData(`${secondMovie}`);
-     SaveComparisonInfo(`${secondMovie}`, reviewScore2);
+     SaveComparisonInfo(`${secondMovie}`, reviewScore2, secondMoveimage);
     } 
     suggestionContainer.append(suggestionCard);
 }

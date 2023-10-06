@@ -10,11 +10,25 @@ function Gettoppicks(){
         return scoresb - scoresa; 
     });
 
+    const hslistimg = document.getElementById('listtoppickimage');
+
+    myArray.forEach(item => {
+    const listItem = document.createElement('li');
+    const imga = document.createElement('img');
+    imga.classList.add('movie-poster')
+    imga.src = item.MovieImage;
+    imga.style.width ="50px"
+    imga.style.height ="75px"
+    listItem.appendChild(imga);
+    hslistimg.appendChild(listItem);
+    });
+
     const hslist = document.getElementById('listtoppickscore');
 
     myArray.forEach(item => {
     const listItem = document.createElement('li');
     listItem.textContent = item.MovieScore;
+    listItem.style.height = "85px"
     hslist.appendChild(listItem);
     });
 
@@ -24,6 +38,7 @@ function Gettoppicks(){
     myArray.forEach(item => {
     const listItem = document.createElement('li');
     listItem.textContent = item.MovieTitle;
+    listItem.style.height = "85px"
     hslistname.appendChild(listItem);
     });
 
