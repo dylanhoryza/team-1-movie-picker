@@ -36,7 +36,7 @@ body, html {
 
 /*Sets color for nav bar link*/
 
-#navbar-toplink, #TopPickTitle{
+#navbar-toplink{
     /* color: var(--color5); */
     color: white;
     font-size: 18px;
