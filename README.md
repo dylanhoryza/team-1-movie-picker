@@ -30,6 +30,7 @@ Our team learned how to work as a team to develop an application that can work w
 ## Installation
 
 To install this application, simply click on this link to open it in your web browser.
+https://dylanhoryza.github.io/team-1-movie-picker/
 
 ## Usage
 
