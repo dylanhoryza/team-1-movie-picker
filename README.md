@@ -1,12 +1,4 @@
-# Team 1 Movie-Picker Project
-
-
-sjbdlt:
--Most people watch movies and most people have a hard time choosing what to watch.
--Figured we try and help people make a more informed and quicker choice.
--Provides more information to a person about the movies they are considering and also could breaks a tie to have a third party suggestion.
--Learned that more information out there than i thought about movies then just year made, title and who stared in it.
--Also provided some random triva information to help spark conversation or thoughts of another movie to watch another time.
+# Movie Picker 
 
 User story:
 
@@ -45,22 +37,12 @@ Search two different movies in the input fields and click the search button. The
 and suggest which movie to watch based off of the Rotten Tomatoes score. Then, a GIF of the suggested movie will be displayed. You can view past top picks
 by clicking on the top picks link in the top right side of the page. The following screenshots show how to use the application.
 
-
+![screenshot1](/assets/images//screenshotp1.png)
+![screenshot2](/assets/images//screenshotp2.png)
+![screenshot3](/assets/images//screenshotp3.png)
+![screenshot4](/assets/images//screenshotp4.png)
     
-    ![screenshot1](assets/images/screenshotp1.png)
-    ![screenshot2](assets/images/screenshotp2.png)
-    ![screenshot3](assets/images/screenshotp3.png)
-    ![screenshot4](assets/images/screenshotp4.png)
-    
-
 ## Credits
-
-Dylan Horyza https://github.com/dylanhoryza
-Ricardo Farfan https://github.com/Chasqui10
-Steven Blake https://github.com/sjbdlt
-
-
-## Credits2
 
 Collaborators:
 - [Github User: sjbdlt ](https://github.com/sjbdlt)
@@ -74,6 +56,9 @@ Client APIs:
 Server APIs:
 - [OMDb | Documentation | API ](https://www.omdbapi.com/)
 - [GIPHY | Documentation | API ](https://developers.giphy.com/docs/api/)
+
+Coding BootCamp Curriculum:
+© 2022 edX Boot Camps LLC. All Rights Reserved.
 
 
 ## License

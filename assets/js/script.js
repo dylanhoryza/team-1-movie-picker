@@ -62,17 +62,9 @@ if (firstMovie == '' || secondMovie == ''){
     gifContainer.removeClass("hide");
     suggestionContainer.removeClass('hide');
    
-
-  
     getFirstMovie();
     getSecondMovie();
-
-
-  }
-
-
-
-}
+}}
 
 
 //Store the movie info in local storage
@@ -115,9 +107,6 @@ function getFirstMovie() {
   .then(function (data) {
     displayFirstMovie(data);
     movie1Data = data;
-    console.log(data);
-    console.log(data.Ratings[1])
-    
   })
 }
 // function to get second movie data
@@ -134,8 +123,6 @@ function getSecondMovie() {
   .then(function (data) {
     displaySecondMovie(data);
     movie2Data = data;
-    console.log(data);
-    console.log(data.Ratings[1])
     compareReviewScores();
   });
 };
@@ -155,7 +142,6 @@ function displayFirstMovie(data) {
   const movieTitleEl = $('#movie-title');
   const releaseYearEl = $('#release-year');
   const runtimeEl = $('#runtime');
-  const moviePosterEL = $('.movie-poster');
   const moviePlotEl = $('#plot');
   const reveiewScoreEl = $('#review-score');
 
@@ -166,8 +152,6 @@ function displayFirstMovie(data) {
   document.querySelector('#poster').src = `${moviePoster}`;
   moviePlotEl.text(`${plot}`);
   reveiewScoreEl.text(`Rotten Tomatoes: ${reviewScore} 🍅`);
-
-
 
 }
 //function to display second movie
@@ -183,7 +167,6 @@ function displaySecondMovie(data) {
   const movieTitleEl = $('#movie-title-2');
   const releaseYearEl = $('#release-year-2');
   const runtimeEl = $('#runtime-2');
-  const moviePosterEL = $('#poster-2');
   const moviePlotEl = $('#plot-2');
   const reveiewScoreEl = $('#review-score-2');
 
@@ -194,7 +177,6 @@ function displaySecondMovie(data) {
   document.querySelector('#poster-2').src = `${moviePoster}`;
   moviePlotEl.text(`${plot}`);
   reveiewScoreEl.text(`Rotten Tomatoes: ${reviewScore} 🍅`);
-
 
 }
 
